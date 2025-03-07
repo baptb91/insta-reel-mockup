@@ -20,6 +20,8 @@ app.post('/combine-videos', upload.fields([
   exec(command, (error, stdout, stderr) => {
     if (error) {
       console.error(`Erreur d'exécution: ${error}`);
+      console.error(`stdout: ${stdout}`);
+      console.error(`stderr: ${stderr}`);
       return res.status(500).send('Erreur lors du traitement de la vidéo');
     }
     
